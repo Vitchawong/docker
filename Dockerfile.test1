@@ -4,4 +4,4 @@ RUN apt update
 RUN apt install python3 -y
 
 WORKDIR ./Dockerfile.test1
-COPY helloworld.py
+COPY helloworld.py ./
