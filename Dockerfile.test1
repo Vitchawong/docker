@@ -3,5 +3,5 @@ FROM ubuntu:lastest
 RUN apt update
 RUN apt install python3 -y
 
-WORKDIR /
+WORKDIR ./Dockerfile.test1
 COPY helloworld.py
