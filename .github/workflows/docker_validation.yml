@@ -11,9 +11,7 @@ jobs:
     steps:
     - name: code_checkout
       uses: actions/checkout@v2
-      with:
-        context: .
-        file: ./Dockerfile.test1
+
     - name: Check_syn
       run: docker build --progress=plain --no-cache -f Dockerfile.test1 .
 
