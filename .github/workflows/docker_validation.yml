@@ -1,15 +1,20 @@
-name: Validation
+name: Dockerfile_validation
 on:
   pull_request:
     branches:
-    - "main"
+      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Validate Dockerfile
-      uses: redcoolbeans/dockerlint-action@v3
+    - 
+      uses: actions/checkout@v2
+      name: Check_syn
+      -
+        run: docker build --progress=plain --no-cache -f Dockerfile .
       with:
+        context: .
         file: ./Dockerfile.test1
+      
+    
