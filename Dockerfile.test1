@@ -4,6 +4,6 @@ RUN apt update
 RUN apt install python3 -y
 
 WORKDIR helloworld
-COPY docker.
+COPY . .
 
 CMD python helloworld.py
