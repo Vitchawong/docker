@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt update
 RUN apt install python3 -y
 
-WORKDIR helloworld
-COPY . .
+WORKDIR Vitchawong/docker
+COPY helloworld.py ./
 
 CMD python helloworld.py
