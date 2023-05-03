@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        file: ./Dockerfile.test1
       - name: Check Dockerfile syntax
         run: docker build --progress=plain --no-cache -f Dockerfile.test1 -t temp-image .
     
