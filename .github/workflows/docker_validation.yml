@@ -1,8 +1,8 @@
 name: Validation
 on:
   pull_request:
-    paths:
-    - Dockerfile
+    branches:
+    - "main"
 
 jobs:
   build:
@@ -12,4 +12,4 @@ jobs:
     - name: Validate Dockerfile
       uses: redcoolbeans/dockerlint-action@v3
       with:
-        path: Dockerfile
+        file: ./Dockerfile.test1
