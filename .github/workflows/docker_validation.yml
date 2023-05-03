@@ -1,0 +1,15 @@
+name: Validation
+on:
+  pull_request:
+    paths:
+    - Dockerfile
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Validate Dockerfile
+      uses: redcoolbeans/dockerlint-action@v3
+      with:
+        path: Dockerfile
