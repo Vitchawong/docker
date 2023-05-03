@@ -3,16 +3,14 @@ name: Dockerfile_validation
 on:
   pull_request:
     branches:
-      - "main"
+      - main
 
 jobs:
-  build:
+  syntax_check:
     runs-on: ubuntu-latest
     steps:
-    - name: code_checkout
-      uses: actions/checkout@v2
-
-    - name: Check_syn
-      run: docker build --progress=plain --no-cache -f Dockerfile.test1 .
-      
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check Dockerfile syntax
+        run: docker build --progress=plain --no-cache -f Dockerfile -t temp-image .
     
